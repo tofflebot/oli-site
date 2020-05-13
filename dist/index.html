@@ -1,14 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title></title>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex">
+  <title>Triple Element Films</title>
+  <link rel="stylesheet" href="css/main.css" />
+  <!-- TODO: sort out icon source -->
+  <script src="https://kit.fontawesome.com/48a780d8d5.js" crossorigin="anonymous"></script>
+</head>
 
-    <link rel="stylesheet" href="css/main.css" />
-  </head>
+<body>
+  <nav class="nav">
+    <div class="container">
+      <button class="nav-close-button transparent-button">Close <i class="fas fa-times"></i></button>
+    </div>
 
-  <body></body>
+    <div class="nav-content">
+      <ul>
+        <li><a href="#"><i class="fas fa-home"></i>Home</a></li>
+        <li><a href="#"><i class="fas fa-wrench"></i>Services</a></li>
+        <ul class="services-nav-list">
+          <li><a href="#">Filmmaking</a></li>
+          <li><a href="#">Editing</a></li>
+          <li><a href="#">Photo & Video</a></li>
+          <li><a href="#">Underwater</a></li>
+        </ul>
+        <li><a href="#"><i class="fas fa-pencil-alt"></i>Blog</a></li>
+        <li><a href="#"><i class="fas fa-id-card-alt"></i>About</a></li>
+        <li><a href="#"><i class="fas fa-envelope"></i>Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <div class="container">
+      <button class="nav-open-button transparent-button">Menu <i class="fas fa-plus"></i></button>
+      <img class="header-logo" src="images/TEF logo black no text.png" alt="Triple Element Films logo">
+    </div>
+  </header>
+
+
+  <main class="homepage-main">
+    <section class="section hero vertical-center">
+      <div class="section-background">
+        <img class="background-image" src="images/gondolas.jpg" alt="Gondolas">
+      </div>
+      <div class="hero-gradient"></div>
+      <img class="hero-logo responsive-image" src="images/TEF logo white.png" alt="Triple Element Films logo">
+      <h2 class="byline">Land | Air | Water</h2>
+      <button class="showreel-play-button transparent-button"><i class="far fa-play-circle"></i> Play showreel</button>
+    </section>
+
+    <section class="section about-home-section">
+      <div class="container section-container flex-right">
+        <div class="home-section-text">
+          <p class="larger-body-text">Triple Element Films is an independent production company based in the UK
+            specialising in underwater,
+            aerial and land based photography, videography and film production.</p>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section filmmaking">
+      <div class="section-background">
+        <img class="background-image" src="images/street.jpg" alt="A street scene at night">
+      </div>
+      <div class="services-gradient"></div>
+      <div class="container section-container flex-left">
+        <div class="home-section-text">
+          <h2>Filmmaking</h2>
+          <p>End to end management of your film project</p>
+          <a class="button" href="#">Find out more →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section photo-video">
+      <div class="section-background">
+        <img class="background-image" src="images/drone.jpg" alt="A camera drone at a football game">
+      </div>
+      <div class="services-gradient"></div>
+      <div class="container section-container flex-right">
+        <div class="home-section-text">
+          <h2>Photography & Videography</h2>
+          <p>Cameraman available for daily hire</p>
+          <a class="button" href="#">Find out more →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section underwater">
+      <div class="section-background">
+        <img class="background-image" src="images/turtle.jpg" alt="A turtle swimming">
+      </div>
+      <div class="services-gradient"></div>
+      <div class="container section-container flex-left">
+        <div class="home-section-text">
+          <h2>Underwater</h2>
+          <p>High quality underwater photography and videography services</p>
+          <a class="button" href="#">Find out more →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section aerial">
+      <div class="section-background">
+        <img class="background-image" src="images/mountain-view.jpg" alt="A mountain view">
+      </div>
+      <div class="services-gradient"></div>
+      <div class="container section-container flex-right">
+        <div class="home-section-text">
+          <h2>Aerial</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci omnis ducimus consequatur.</p>
+          <a class="button" href="#">Find out more →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section editing">
+      <div class="section-background">
+        <img class="background-image" src="images/edit.PNG" alt="A video editing screen">
+      </div>
+      <div class="services-gradient"></div>
+      <div class="container section-container flex-left">
+        <div class="home-section-text">
+          <h2>Editing</h2>
+          <p>Already have your footage and need a professional editor?</p>
+          <a class="button" href="#">Find out more →</a>
+        </div>
+      </div>
+    </section>
+
+
+
+
+    <section class='section get-in-touch vertical-center'>
+      <div class="section-background">
+        <img class="background-image" src="images/sunset.jpg" alt="A sunset view">
+      </div>
+      <div class="small-container contact-panel rounded-corners">
+        <h2>Get in touch</h2>
+        <p>Big or small, simple or complicated, we'd love to talk to you about your video project.</p>
+        <div class="flex-row">
+          <div class="flex-small">
+            <form>
+              <label for="name">Name</label>
+              <input type="text" id="name" placeholder="First Name">
+              <label for="email">Email</label>
+              <input type="email" id="email" placeholder="Email address">
+              <label for="message">Your message</label>
+              <textarea class="margin-bottom" id="message"></textarea>
+              <input type="submit" value="Submit">
+            </form>
+          </div>
+          <div class="flex-small">
+            <h3>Email us</h3>
+            <p>
+              <a class="contact-link" href="mailto:hello@tripleelementfilms.com">hello@tripleelementfilms.com</a>
+            </p>
+            <h3>Call us</h3>
+            <p><a href="">078880 880 322</a></p>
+
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="container">
+        <div class="flex-row">
+          <div class="flex-small footer-left">
+            <ul>
+              <li>Contact us</li>
+              <li>About</li>
+            </ul>
+          </div>
+          <div class="flex-small social-icons footer-right">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+
+          </div>
+        </div>
+        <div class="flex-row">
+          <div class="flex-small footer-left">
+            <p>&copy; Triple Element Films <span class="year"></span></p>
+          </div>
+          <div class="flex-small footer-right">
+            <p>Website by Tom</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script src="scripts/scripts.js"></script>
+</body>
+
 </html>

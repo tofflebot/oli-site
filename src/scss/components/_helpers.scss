@@ -129,3 +129,12 @@
   width: 1px;
   overflow: hidden;
 }
+
+// Design 
+.rounded-corners {
+  border-radius: .5em;
+}
+
+.shadow {
+  box-shadow: .5rem 1.25rem 1.75rem 0 rgba(100, 110, 140, .4);
+}

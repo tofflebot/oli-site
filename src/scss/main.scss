@@ -35,3 +35,381 @@
 @import 'components/tables';
 @import 'components/navigation';
 @import 'components/layout';
+@import 'components/header';
+
+/* -------------------------------------------------------------------------- */
+/*                                User partials                               */
+/* -------------------------------------------------------------------------- */
+
+@import 'components/typography';
+
+/* -------------------------------------------------------------------------- */
+/*                                  Homepage                                  */
+/* -------------------------------------------------------------------------- */
+
+
+/* -------------------------------- Gradients ------------------------------- */
+$hero-gradient: linear-gradient(135deg, hsla(49, 100, 73, 0.5) 0%, hsla(26, 78, 49, 0.5) 100%);
+
+
+body {
+    &.nav-open {
+        overflow: hidden;
+    }
+}
+
+// TODO: sort out scroll snap 
+
+// .homepage-main {
+//     height: 100vh;
+//     overflow-y: scroll;
+
+//     @media screen and (min-width: $small) {
+//         scroll-snap-type: y mandatory;
+//     }
+// }
+
+
+
+
+
+
+
+
+.background-image {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.hero-gradient {
+    @extend .section-background;
+    background: hsla(49, 100, 73, .7);
+    background: $hero-gradient;
+}
+
+
+.hero {
+    flex-direction: column;
+    text-align: center;
+
+    .byline {
+        text-transform: uppercase;
+        font-weight: 350;
+        letter-spacing: .1em;
+        text-decoration: none;
+        font-size: 1.5rem;
+
+        @media screen and (min-width: $mobile) {
+            font-size: 2rem;
+        }
+    }
+}
+
+.hero-logo {
+    width: 10rem;
+
+    @media screen and (min-width: $mobile) {
+        width: 14rem;
+    }
+
+    @media screen and (min-width: $tablet) {
+        width: 20rem;
+    }
+
+    @media screen and (min-width: $desktop) {
+        width: 21rem;
+    }
+}
+
+
+
+
+// TODO: test focus on buttons 
+
+.showreel-play-button {
+    font-size: 1.3rem;
+
+    @media screen and (min-width: $tablet) {
+        font-size: 1.5rem;
+    }
+}
+
+
+.showreel-play-button {
+    margin-top: 1em;
+}
+
+.section {
+    // scroll-snap-align: start;
+    background: transparent;
+    min-height: 95vh;
+    height: auto;
+    padding: 1em;
+    position: relative;
+    color: #eee;
+    border-bottom: .25em solid $orange;
+
+    h2 {
+        color: #eee;
+        font-size: 2.7rem;
+
+        @media screen and (min-width: $tablet) {
+            font-size: 3.2rem;
+        }
+
+        @media screen and (min-width: $desktop) {
+            font-size: 3.5rem;
+        }
+    }
+
+    p {
+        font-size: 1.6rem;
+        font-weight: 300;
+
+        @media screen and (min-width: $tablet) {
+            font-size: 1.9rem;
+        }
+
+        @media screen and (min-width: $desktop) {
+            font-size: 2.2rem;
+        }
+    }
+
+    .button {
+        font-size: 1.3rem;
+        padding: .7em 1em;
+    }
+
+}
+
+.section-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.section-container {
+    margin-top: 20vh;
+}
+
+.flex-right {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.flex-left {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.home-section-text {
+    width: 600px;
+    max-width: 100%;
+    opacity: 0;
+    transition: all 1s cubic-bezier(0.23, 0.43, 0, 0.94);
+    transform: translateY(2em);
+
+    &.scrolled {
+        opacity: 1;
+        transform: translateY(0);
+
+    }
+}
+
+
+.about-home-section {
+    background-color: #444444;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 100 60'%3E%3Cg %3E%3Crect fill='%23444444' width='11' height='11'/%3E%3Crect fill='%23434343' x='10' width='11' height='11'/%3E%3Crect fill='%23424242' y='10' width='11' height='11'/%3E%3Crect fill='%23414141' x='20' width='11' height='11'/%3E%3Crect fill='%23404040' x='10' y='10' width='11' height='11'/%3E%3Crect fill='%233e3e3e' y='20' width='11' height='11'/%3E%3Crect fill='%233d3d3d' x='30' width='11' height='11'/%3E%3Crect fill='%233c3c3c' x='20' y='10' width='11' height='11'/%3E%3Crect fill='%233b3b3b' x='10' y='20' width='11' height='11'/%3E%3Crect fill='%233a3a3a' y='30' width='11' height='11'/%3E%3Crect fill='%23393939' x='40' width='11' height='11'/%3E%3Crect fill='%23383838' x='30' y='10' width='11' height='11'/%3E%3Crect fill='%23373737' x='20' y='20' width='11' height='11'/%3E%3Crect fill='%23363636' x='10' y='30' width='11' height='11'/%3E%3Crect fill='%23353535' y='40' width='11' height='11'/%3E%3Crect fill='%23343434' x='50' width='11' height='11'/%3E%3Crect fill='%23333333' x='40' y='10' width='11' height='11'/%3E%3Crect fill='%23313131' x='30' y='20' width='11' height='11'/%3E%3Crect fill='%23303030' x='20' y='30' width='11' height='11'/%3E%3Crect fill='%232f2f2f' x='10' y='40' width='11' height='11'/%3E%3Crect fill='%232e2e2e' y='50' width='11' height='11'/%3E%3Crect fill='%232d2d2d' x='60' width='11' height='11'/%3E%3Crect fill='%232c2c2c' x='50' y='10' width='11' height='11'/%3E%3Crect fill='%232b2b2b' x='40' y='20' width='11' height='11'/%3E%3Crect fill='%232a2a2a' x='30' y='30' width='11' height='11'/%3E%3Crect fill='%23292929' x='20' y='40' width='11' height='11'/%3E%3Crect fill='%23282828' x='10' y='50' width='11' height='11'/%3E%3Crect fill='%23272727' x='70' width='11' height='11'/%3E%3Crect fill='%23262626' x='60' y='10' width='11' height='11'/%3E%3Crect fill='%23252525' x='50' y='20' width='11' height='11'/%3E%3Crect fill='%23242424' x='40' y='30' width='11' height='11'/%3E%3Crect fill='%23232323' x='30' y='40' width='11' height='11'/%3E%3Crect fill='%23222222' x='20' y='50' width='11' height='11'/%3E%3Crect fill='%23212121' x='80' width='11' height='11'/%3E%3Crect fill='%23202020' x='70' y='10' width='11' height='11'/%3E%3Crect fill='%231f1f1f' x='60' y='20' width='11' height='11'/%3E%3Crect fill='%231e1e1e' x='50' y='30' width='11' height='11'/%3E%3Crect fill='%231d1d1d' x='40' y='40' width='11' height='11'/%3E%3Crect fill='%231c1c1c' x='30' y='50' width='11' height='11'/%3E%3Crect fill='%231b1b1b' x='90' width='11' height='11'/%3E%3Crect fill='%231a1a1a' x='80' y='10' width='11' height='11'/%3E%3Crect fill='%23191919' x='70' y='20' width='11' height='11'/%3E%3Crect fill='%23181818' x='60' y='30' width='11' height='11'/%3E%3Crect fill='%23171717' x='50' y='40' width='11' height='11'/%3E%3Crect fill='%23161616' x='40' y='50' width='11' height='11'/%3E%3Crect fill='%23151515' x='90' y='10' width='11' height='11'/%3E%3Crect fill='%23141414' x='80' y='20' width='11' height='11'/%3E%3Crect fill='%23131313' x='70' y='30' width='11' height='11'/%3E%3Crect fill='%23121212' x='60' y='40' width='11' height='11'/%3E%3Crect fill='%23111111' x='50' y='50' width='11' height='11'/%3E%3Crect fill='%230f0f0f' x='90' y='20' width='11' height='11'/%3E%3Crect fill='%230e0e0e' x='80' y='30' width='11' height='11'/%3E%3Crect fill='%230c0c0c' x='70' y='40' width='11' height='11'/%3E%3Crect fill='%230b0b0b' x='60' y='50' width='11' height='11'/%3E%3Crect fill='%23090909' x='90' y='30' width='11' height='11'/%3E%3Crect fill='%23070707' x='80' y='40' width='11' height='11'/%3E%3Crect fill='%23050505' x='70' y='50' width='11' height='11'/%3E%3Crect fill='%23040404' x='90' y='40' width='11' height='11'/%3E%3Crect fill='%23020202' x='80' y='50' width='11' height='11'/%3E%3Crect fill='%23000000' x='90' y='50' width='11' height='11'/%3E%3C/g%3E%3C/svg%3E");
+    background-attachment: scroll;
+    background-size: cover;
+}
+
+.services-gradient {
+    @extend .section-background;
+    background: hsla(190, 3, 36, .7);
+    background: linear-gradient(225deg, hsla(190, 3, 36, 0.7) 0%, hsla(216, 17, 57, 0.7) 100%);
+}
+
+.editing-gradient {
+    @extend .section-background;
+    background: rgba(76, 80, 94, 0.7);
+    background: linear-gradient(180deg, rgba(66, 75, 90, 0.7) 0%, rgba(79, 57, 83, 0.7) 100%);
+}
+
+.filmmaking {
+    $filmmaking-color: $tangerine;
+
+    h2 {
+        text-decoration-color: $filmmaking-color;
+    }
+
+    .button {
+        border: $button-border-width $button-border-style $filmmaking-color;
+        background: $filmmaking-color;
+
+        &:hover,
+        &:focus {
+            border: $button-border-width $button-border-style darken($filmmaking-color, 10%);
+            background: darken($filmmaking-color, 10%);
+        }
+    }
+}
+
+
+.editing {
+    $editing-color: $yellow;
+
+    h2 {
+        text-decoration-color: $editing-color;
+    }
+
+    .button {
+        border: $button-border-width $button-border-style $editing-color;
+        background: $editing-color;
+
+        &:hover,
+        &:focus {
+            border: $button-border-width $button-border-style darken($editing-color, 10%);
+            background: darken($editing-color, 10%);
+        }
+    }
+}
+
+.photo-video {
+    $photo-video-color: $rusty-red;
+
+    h2 {
+        text-decoration-color: $photo-video-color;
+    }
+
+    .button {
+        border: $button-border-width $button-border-style $photo-video-color;
+        background: $photo-video-color;
+
+        &:hover,
+        &:focus {
+            border: $button-border-width $button-border-style darken($photo-video-color, 10%);
+            background: darken($photo-video-color, 10%);
+        }
+    }
+}
+
+.aerial {
+    $aerial-color: $indian-yellow;
+
+    h2 {
+        text-decoration-color: $aerial-color;
+    }
+
+    .button {
+        border: $button-border-width $button-border-style $aerial-color;
+        background: $aerial-color;
+
+        &:hover,
+        &:focus {
+            border: $button-border-width $button-border-style darken($aerial-color, 10%);
+            background: darken($aerial-color, 10%);
+        }
+    }
+}
+
+.get-in-touch {
+    background: transparent;
+    padding: 1em;
+    position: relative;
+    height: auto;
+    min-height: 100vh;
+    border-bottom: none;
+    // scroll-snap-align: none;
+}
+
+
+.contact-panel {
+    $contact-color: $yellow;
+    background: #eee;
+    padding: 1rem 1.5rem;
+    color: #444;
+    flex-grow: 1;
+
+    @media screen and (min-width: $tablet) {
+        padding: 1rem 2rem;
+    }
+
+    h2,
+    h3 {
+        color: #444;
+        text-decoration-color: $contact-color;
+    }
+
+    p {
+        font-size: 1.3rem;
+    }
+
+    input[type=submit] {
+        border: $button-border-width $button-border-style $contact-color;
+        background: $contact-color;
+
+        &:hover,
+        &:focus {
+            border: $button-border-width $button-border-style darken($contact-color, 10%);
+            background: darken($contact-color, 10%);
+        }
+    }
+
+    a {
+        font-size: 1.3rem;
+    }
+}
+
+// TODO: sort out footer alignment
+
+footer {
+    font-size: 1.3rem;
+    background: #050505;
+    color: #eee;
+    padding: 1em;
+
+    a {
+        color: #eee;
+
+        &:hover,
+        &:focus,
+        &:active {
+            color: $orange;
+            background: none;
+        }
+    }
+
+
+    i {
+        font-size: 3rem;
+        margin: 0 1rem;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+}
+
+.footer-left,
+.footer-right {
+    text-align: center;
+}
+
+
+.footer-left {
+    @media screen and (min-width: $mobile) {
+        text-align: left;
+    }
+}
+
+.footer-right {
+    @media screen and (min-width: $mobile) {
+        text-align: right;
+    }
+}

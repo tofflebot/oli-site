@@ -108,3 +108,17 @@ a.full-button {
   display: block;
   width: 100%;
 }
+
+.transparent-button {
+  background: none;
+  border: #eee solid .2em;
+  transition: all .1s ease-in-out;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background: #eee;
+    border: #eee solid .2em;
+    color: #444;
+  }
+}

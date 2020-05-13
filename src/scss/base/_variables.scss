@@ -17,17 +17,24 @@ $large: 1200px !default;
 // Breakpoints
 //==============================================================================
 
-$mobile: $x-small !default;
-$tablet: $small !default;
+$mobile: 380px !default;
+$tablet: 768px !default;
 $desktop: $medium !default;
 
 //==============================================================================
 // Global Colors
 //==============================================================================
 
+$rusty-red: #9b3a1a;
+$orange: #df711c;
+$tangerine: #ffaf1c;
+$yellow: #ffc839;
+$pale-yellow: #ffe576;
+$indian-yellow: #eea243;
+
 $background: white !default;
-$primary-color: #0366ee !default;
-$secondary-color: #29de7d !default;
+$primary-color: $orange !default;
+$secondary-color: $rusty-red !default;
 $accent-color: #cdcdcd !default;
 $alternate-background: #fafafa !default;
 $alternate-color: #404040 !default;
@@ -49,14 +56,21 @@ $font-style: normal !default;
 $font-variant: normal !default;
 $font-weight: normal !default;
 $font-color: #404040 !default;
-$font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, sans-serif !default;
+$font-family: 'lato',
+Helvetica Neue,
+Helvetica,
+Arial,
+sans-serif !default;
 $line-height: 1.6 !default;
 
 // Headings
 $heading-font-color: #404040 !default;
 $heading-font-weight: 600 !default;
-$heading-font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial,
-  sans-serif !default;
+$heading-font-family: 'oswald',
+Helvetica Neue,
+Helvetica,
+Arial,
+sans-serif !default;
 $heading-line-height: 1.2 !default;
 
 $h1-mobile: 1.75rem !default;
@@ -98,7 +112,11 @@ $button-background: $primary-color !default;
 $button-background-hover: darken($button-background, 10%) !default;
 $button-color: #ffffff !default;
 $button-font-weight: 600 !default;
-$button-font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, sans-serif !default;
+$button-font-family: 'lato',
+Helvetica Neue,
+Helvetica,
+Arial,
+sans-serif !default;
 $button-font-size: 1rem !default;
 $button-border-width: 1px !default;
 $button-border-style: solid !default;
@@ -126,8 +144,7 @@ $round-buttons: 40px !default;
 // Forms
 //==============================================================================
 
-$forms: (
-  '[type=color], [type=date], [type=datetime], [type=datetime-local], [type=email],        [type=month], [type=number], [type=password], [type=search], [type=tel], [type=text], [type=url], [type=week], [type=time], select, textarea'
+$forms: ('[type=color], [type=date], [type=datetime], [type=datetime-local], [type=email],        [type=month], [type=number], [type=password], [type=search], [type=tel], [type=text], [type=url], [type=week], [type=time], select, textarea'
 ) !default;
 $buttons: ('.button, a.button, button, [type=submit], [type=reset], [type=button]') !default;
 $input-background: transparent !default;
@@ -149,6 +166,11 @@ $caption: #ababab !default;
 
 $code-color: $font-color !default;
 $code-size: 14px !default;
-$code-family: Menlo, monospace !default;
+$code-family: Menlo,
+monospace !default;
 $code-background: transparent !default;
 $code-borders: $borders !default;
+
+/* -------------------------------------------------------------------------- */
+/*                                   Colours                                  */
+/* -------------------------------------------------------------------------- */

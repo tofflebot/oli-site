@@ -8,6 +8,7 @@ html {
   -moz-osx-font-smoothing: grayscale;
   font: $font-style $font-variant $font-weight #{$font-size}/#{$line-height} $font-family;
   font-size: $font-size;
+  scroll-behavior: smooth;
 }
 
 // Body base
@@ -45,6 +46,14 @@ h5 {
   font-family: $heading-font-family;
   line-height: $heading-line-height;
   color: $heading-font-color;
+  text-decoration: underline;
+  text-decoration-color: $orange;
+
+  @supports (text-decoration-skip-ink: none) {
+    text-decoration-thickness: .2em;
+    text-underline-offset: -4px;
+    text-decoration-skip-ink: none;
+  }
 
   &:not(:first-child) {
     margin: 1.5rem 0;
@@ -80,6 +89,7 @@ h5 {
 }
 
 @include small-breakpoint {
+
   // Increased margin on additional headings
   h1:not(:first-child),
   h2:not(:first-child),
@@ -119,6 +129,10 @@ a {
   &:focus {
     color: $link-hover-color;
     text-decoration: underline;
+    text-decoration-style: dashed;
+    text-decoration-skip-ink: none;
+    text-decoration-thickness: .1em;
+    background-color: $pale-yellow;
   }
 }
 
@@ -178,7 +192,7 @@ kbd {
 }
 
 // Inline code styling
-:not(pre) > code {
+:not(pre)>code {
   color: $code-color;
   background: $code-background;
   font-family: $code-family;
