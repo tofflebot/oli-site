@@ -13,12 +13,12 @@
 </head>
 
 <body>
-  <nav class="nav">
+  <div class="nav">
     <div class="container">
       <button class="nav-close-button transparent-button">Close <i class="fas fa-times"></i></button>
     </div>
 
-    <div class="nav-content">
+    <nav class="nav-content">
       <ul>
         <li><a href="#"><i class="fas fa-home"></i>Home</a></li>
         <li><a href="#"><i class="fas fa-wrench"></i>Services</a></li>
@@ -32,8 +32,19 @@
         <li><a href="#"><i class="fas fa-id-card-alt"></i>About</a></li>
         <li><a href="#"><i class="fas fa-envelope"></i>Contact</a></li>
       </ul>
+    </nav>
+  </div>
+
+  <div class="modal-outer">
+    <div class="modal-inner rounded-corners">
+      <button class="close-modal-button"><i class="fas fa-times"></i></button>
+      <div class="plyr__video-embed" id="player">
+        <iframe
+          src="https://www.youtube.com/embed/Rln-0yZau2c?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"
+          allowfullscreen allowtransparency allow="autoplay"></iframe>
+      </div>
     </div>
-  </nav>
+  </div>
 
   <header class="page-header">
     <div class="container">
@@ -46,7 +57,7 @@
   <main class="homepage-main">
     <section class="section hero vertical-center">
       <div class="section-background">
-        <video class="background-image" src="images/front-page-video.mp4" autoplay loop></video>
+        <video class="background-image hero-video" src="images/front-page-video.mp4" autoplay loop></video>
       </div>
       <div class="hero-gradient"></div>
       <img class="hero-logo responsive-image" src="images/TEF logo white.png" alt="Triple Element Films logo">
@@ -169,34 +180,34 @@
         </div>
       </div>
     </section>
-    <footer>
-      <div class="container">
-        <div class="flex-row">
-          <div class="flex-small footer-left">
-            <ul>
-              <li>Contact us</li>
-              <li>About</li>
-            </ul>
-          </div>
-          <div class="flex-small social-icons footer-right">
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-facebook"></i></a>
-
-          </div>
+  </main>
+  <footer>
+    <div class="container">
+      <div class="flex-row">
+        <div class="flex-small footer-left">
+          <ul>
+            <li>Contact us</li>
+            <li>About</li>
+          </ul>
         </div>
-        <div class="flex-row">
-          <div class="flex-small footer-left">
-            <p>&copy; Triple Element Films <span class="year"></span></p>
-          </div>
-          <div class="flex-small footer-right">
-            <p>Website by Tom</p>
-          </div>
+        <div class="flex-small social-icons footer-right">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+
         </div>
       </div>
-    </footer>
-  </main>
-
+      <div class="flex-row">
+        <div class="flex-small footer-left">
+          <p>&copy; Triple Element Films <span class="year"></span></p>
+        </div>
+        <div class="flex-small footer-right">
+          <p>Website by Tom</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://cdn.plyr.io/3.6.2/plyr.polyfilled.js"></script>
   <script src="scripts/scripts.js"></script>
 </body>
 
