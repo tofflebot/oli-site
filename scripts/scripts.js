@@ -59,7 +59,6 @@ function openModal() {
     });
     // Expose player so it can be used from the console
     window.player = player;
-
     showreelOpened = true;
     } else {
         player.play();
@@ -82,6 +81,7 @@ modal.addEventListener('click', (e) => {
         closeModal();
     }  
 });
+
 window.addEventListener('keydown', e => {
     if (e.key === 'Escape') {
       closeModal();
