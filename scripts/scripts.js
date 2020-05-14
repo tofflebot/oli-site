@@ -68,9 +68,9 @@ function openModal() {
 }
 
 function closeModal() {
+    player.pause();
     modal.classList.remove('modal-open');
     body.classList.remove('no-scroll');
-    player.pause();
     heroVideo.play();
 }
 
