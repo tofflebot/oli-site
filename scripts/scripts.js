@@ -9,7 +9,7 @@ const heroVideo = document.querySelector('.hero video');
 const showreelButton = document.querySelector('.showreel-play-button');
 const modal = document.querySelector('.modal-outer');
 const modalCloseButton = document.querySelector('.close-modal-button');
-let showreelOpened = false; 
+let showreelOpened = false;
 
 
 
@@ -51,15 +51,16 @@ function closeNav() {
 
 function openModal() {
     modal.classList.add('modal-open');
+    body.classList.add('no-scroll');
     heroVideo.pause();
     if (!showreelOpened) {
-    // https://github.com/sampotts/plyr/#options
-    const player = new Plyr('#player', {
-        autoplay: true,
-    });
-    // Expose player so it can be used from the console
-    window.player = player;
-    showreelOpened = true;
+        // https://github.com/sampotts/plyr/#options
+        const player = new Plyr('#player', {
+            autoplay: true,
+        });
+        // Expose player so it can be used from the console
+        window.player = player;
+        showreelOpened = true;
     } else {
         player.play();
     }
@@ -68,6 +69,7 @@ function openModal() {
 
 function closeModal() {
     modal.classList.remove('modal-open');
+    body.classList.remove('no-scroll');
     player.pause();
     heroVideo.play();
 }
@@ -79,15 +81,15 @@ menuCloseButton.addEventListener('click', closeNav);
 modal.addEventListener('click', (e) => {
     if (e.target === e.currentTarget) {
         closeModal();
-    }  
+    }
 });
 
 window.addEventListener('keydown', e => {
     if (e.key === 'Escape') {
-      closeModal();
-      closeNav();
+        closeModal();
+        closeNav();
     }
-  })
+})
 
 
 // Change colour of header on scrol
@@ -126,16 +128,7 @@ const homeTextObserver = new IntersectionObserver(homeTextCallback, {
 
 homeSectionText.forEach((text) => homeTextObserver.observe(text));
 
-// Showreel player
 
-// Change "{}" to your options:
-// https://github.com/sampotts/plyr/#options
-const player = new Plyr('#player', {
-    autoplay: true,
-});
-
-// Expose player so it can be used from the console
-window.player = player;
 
 
 
