@@ -1,6 +1,6 @@
 const body = document.querySelector('body');
-const menuOpenButton = document.querySelector('.nav-open-button');
-const menuCloseButton = document.querySelector('.nav-close-button');
+const navOpenButton = document.querySelector('.nav-open-button');
+const navCloseButton = document.querySelector('.nav-close-button');
 const nav = document.querySelector('.nav');
 const heroSection = document.querySelector('.hero');
 const header = document.querySelector('.page-header');
@@ -12,31 +12,27 @@ const modalCloseButton = document.querySelector('.close-modal-button');
 let showreelOpened = false;
 
 
-
-
-
-
-
-
 // TODO prevent focus on nav when closed and on body when open 
 
-function checkIfVideoLoaded() {
-    if (heroVideo.src) {
-        console.log('video loaded');
+// function checkIfVideoLoaded() {
+//     if (heroVideo.src) {
+//         console.log('video loaded');
 
-    } else {
-        setTimeout(checkIfVideoLoaded, 250);
-    }
-}
+//     } else {
+//         setTimeout(checkIfVideoLoaded, 250);
+//     }
+// }
 
-checkIfVideoLoaded();
+// checkIfVideoLoaded();
 
 function openNav() {
     nav.classList.add('nav-open');
     body.classList.add('no-scroll');
-    heroVideo.pause();
     setTimeout(() => {
-        menuOpenButton.style.opacity = 0;
+        heroVideo.pause()
+    }, 400);
+    setTimeout(() => {
+        navOpenButton.style.opacity = 0;
     }, 200);
 }
 
@@ -45,7 +41,7 @@ function closeNav() {
     body.classList.remove('no-scroll');
     heroVideo.play();
     setTimeout(() => {
-        menuOpenButton.style.opacity = 1
+        navOpenButton.style.opacity = 1
     }, 200);
 }
 
@@ -76,8 +72,8 @@ function closeModal() {
 
 showreelButton.addEventListener('click', openModal);
 modalCloseButton.addEventListener('click', closeModal);
-menuOpenButton.addEventListener('click', openNav);
-menuCloseButton.addEventListener('click', closeNav);
+navOpenButton.addEventListener('click', openNav);
+navCloseButton.addEventListener('click', closeNav);
 modal.addEventListener('click', (e) => {
     if (e.target === e.currentTarget) {
         closeModal();
@@ -86,8 +82,13 @@ modal.addEventListener('click', (e) => {
 
 window.addEventListener('keydown', e => {
     if (e.key === 'Escape') {
-        closeModal();
         closeNav();
+    }
+});
+
+window.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+        closeModal();
     }
 })
 
