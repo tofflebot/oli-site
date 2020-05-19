@@ -1,84 +1,39 @@
 const body = document.querySelector('body');
+let isHomepage = false;
+
+function checkIfHomepage() {
+    if (document.querySelector('.hero')) {
+        isHomepage = true;
+    }
+}
+
+
+// Navigation
+const nav = document.querySelector('.nav');
+const header = document.querySelector('.page-header');
 const navOpenButton = document.querySelector('.nav-open-button');
 const navCloseButton = document.querySelector('.nav-close-button');
-const nav = document.querySelector('.nav');
-const heroSection = document.querySelector('.hero');
-const header = document.querySelector('.page-header');
-const homeSectionText = document.querySelectorAll('.home-section-text');
-const heroVideo = document.querySelector('.hero video');
-const showreelButton = document.querySelector('.showreel-play-button');
-const modal = document.querySelector('.modal-outer');
-const modalCloseButton = document.querySelector('.close-modal-button');
-let showreelOpened = false;
-
-
-// TODO prevent focus on nav when closed and on body when open 
-
-// function checkIfVideoLoaded() {
-//     if (heroVideo.src) {
-//         console.log('video loaded');
-
-//     } else {
-//         setTimeout(checkIfVideoLoaded, 250);
-//     }
-// }
-
-// checkIfVideoLoaded();
 
 function openNav() {
+    nav.dispatchEvent(new CustomEvent('navOpened'));
     nav.classList.add('nav-open');
     body.classList.add('no-scroll');
-    setTimeout(() => {
-        heroVideo.pause()
-    }, 400);
     setTimeout(() => {
         navOpenButton.style.opacity = 0;
     }, 200);
 }
 
 function closeNav() {
+    nav.dispatchEvent(new CustomEvent('navClosed'));
     nav.classList.remove('nav-open');
     body.classList.remove('no-scroll');
-    heroVideo.play();
     setTimeout(() => {
         navOpenButton.style.opacity = 1
     }, 200);
 }
 
-function openModal() {
-    modal.classList.add('modal-open');
-    body.classList.add('no-scroll');
-    heroVideo.pause();
-    if (!showreelOpened) {
-        // https://github.com/sampotts/plyr/#options
-        const player = new Plyr('#player', {
-            autoplay: true,
-        });
-        // Expose player so it can be used from the console
-        window.player = player;
-        showreelOpened = true;
-    } else {
-        player.play();
-    }
-
-}
-
-function closeModal() {
-    player.pause();
-    modal.classList.remove('modal-open');
-    body.classList.remove('no-scroll');
-    heroVideo.play();
-}
-
-showreelButton.addEventListener('click', openModal);
-modalCloseButton.addEventListener('click', closeModal);
 navOpenButton.addEventListener('click', openNav);
 navCloseButton.addEventListener('click', closeNav);
-modal.addEventListener('click', (e) => {
-    if (e.target === e.currentTarget) {
-        closeModal();
-    }
-});
 
 window.addEventListener('keydown', e => {
     if (e.key === 'Escape') {
@@ -86,53 +41,137 @@ window.addEventListener('keydown', e => {
     }
 });
 
-window.addEventListener('keydown', e => {
-    if (e.key === 'Escape') {
-        closeModal();
-    }
-})
+// Homepage 
+function homepageFunctions() {
+
+    if (!isHomepage) {
+        return
+    } else {
+        const heroSection = document.querySelector('.hero');
+        const homeSectionText = document.querySelectorAll('.home-section-text');
+        const heroVideo = document.querySelector('.hero video');
+        const showreelButton = document.querySelector('.showreel-play-button');
+        const modal = document.querySelector('.modal-outer');
+        const modalCloseButton = document.querySelector('.close-modal-button');
+        let showreelOpened = false;
 
 
-// Change colour of header on scrol
-const headerScrollOptions = {
-    rootMargin: "-90% 0px 0px 0px"
-};
-
-const filmmakingSectionObserver = new IntersectionObserver(function (
-        entries,
-        filmmakingSectionObserver
-    ) {
-        entries.forEach(entry => {
-            if (!entry.isIntersecting) {
-                header.classList.add("scrolled");
+        function openModal() {
+            modal.classList.add('modal-open');
+            body.classList.add('no-scroll');
+            heroVideo.pause();
+            if (!showreelOpened) {
+                // https://github.com/sampotts/plyr/#options
+                const player = new Plyr('#player', {
+                    autoplay: true,
+                });
+                // Expose player so it can be used from the console
+                window.player = player;
+                showreelOpened = true;
             } else {
-                header.classList.remove("scrolled");
+                player.play();
+            }
+
+        }
+
+        function closeModal() {
+            player.pause();
+            modal.classList.remove('modal-open');
+            body.classList.remove('no-scroll');
+            heroVideo.play();
+        }
+
+        showreelButton.addEventListener('click', openModal);
+        modalCloseButton.addEventListener('click', closeModal);
+        modal.addEventListener('click', (e) => {
+            if (e.target === e.currentTarget) {
+                closeModal();
             }
         });
-    },
-    headerScrollOptions);
 
-filmmakingSectionObserver.observe(heroSection);
 
-// Animate home page elements on scroll 
-function homeTextCallback(homeText) {
-    homeText.forEach((homeTextObserverEntry) => {
-        if (homeTextObserverEntry.isIntersecting) {
-            homeTextObserverEntry.target.classList.add('scrolled');
+        window.addEventListener('keydown', e => {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        nav.addEventListener('navOpened',
+            () => {
+                setTimeout(() => {
+                    heroVideo.pause()
+                }, 400);
+            });
+
+        nav.addEventListener('navClosed',
+            () => {
+                heroVideo.play();
+            });
+
+
+
+        // Change colour of header on scrol
+        const headerScrollOptions = {
+            rootMargin: "-90% 0px 0px 0px"
+        };
+
+        const filmmakingSectionObserver = new IntersectionObserver(function (
+                entries,
+                filmmakingSectionObserver
+            ) {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) {
+                        header.classList.add("scrolled");
+                    } else {
+                        header.classList.remove("scrolled");
+                    }
+                });
+            },
+            headerScrollOptions);
+
+        filmmakingSectionObserver.observe(heroSection);
+
+        // Animate home page elements on scroll 
+        function homeTextCallback(homeText) {
+            homeText.forEach((homeTextObserverEntry) => {
+                if (homeTextObserverEntry.isIntersecting) {
+                    homeTextObserverEntry.target.classList.add('scrolled');
+                }
+            })
         }
-    })
+
+        const homeTextObserver = new IntersectionObserver(homeTextCallback, {
+            threshold: 0.3,
+        });
+
+        homeSectionText.forEach((text) => homeTextObserver.observe(text));
+    };
+};
+
+function headerBuffer() {
+    const headerHeight = document.querySelector('.header-height');
+    headerHeight.style.height = `${header.clientHeight}px`;
 }
 
-const homeTextObserver = new IntersectionObserver(homeTextCallback, {
-    threshold: 0.3,
-});
+// TODO prevent focus on nav and modal when closed and on body when they are open 
 
-homeSectionText.forEach((text) => homeTextObserver.observe(text));
+//Not homepage functions
+function notHomepageFunctions() {
+    if (isHomepage) {
+        return;
+    } else {
+        header.classList.add('scrolled');
+       headerBuffer();
+    };
+    window.addEventListener('resize', headerBuffer)
+}
 
 
 
-
-
+//Functions to run on page load
+checkIfHomepage();
+homepageFunctions();
+notHomepageFunctions();
 
 
 // Set the year at the bottom of the page
