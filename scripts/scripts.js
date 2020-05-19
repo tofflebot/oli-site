@@ -21,6 +21,7 @@ function openNav() {
     setTimeout(() => {
         navOpenButton.style.opacity = 0;
     }, 200);
+    nav.focus();
 }
 
 function closeNav() {
@@ -29,7 +30,7 @@ function closeNav() {
     body.classList.remove('no-scroll');
     setTimeout(() => {
         navOpenButton.style.opacity = 1
-    }, 200);
+    }, 200);                              
 }
 
 navOpenButton.addEventListener('click', openNav);
@@ -72,13 +73,21 @@ function homepageFunctions() {
                 player.play();
             }
 
+        };
+
+        function stopShowreel() {
+            if (player.playing) {
+                player.pause();
+            } else {
+                setTimeout(stopShowreel, 200);
+            }
         }
 
         function closeModal() {
-            player.pause();
             modal.classList.remove('modal-open');
             body.classList.remove('no-scroll');
             heroVideo.play();
+            stopShowreel();
         }
 
         showreelButton.addEventListener('click', openModal);
@@ -107,6 +116,9 @@ function homepageFunctions() {
             () => {
                 heroVideo.play();
             });
+
+            
+            
 
 
 
@@ -145,8 +157,11 @@ function homepageFunctions() {
         });
 
         homeSectionText.forEach((text) => homeTextObserver.observe(text));
+        const modalElements = Array.from(modal.querySelectorAll('a, button'));
     };
-};
+
+}; //end homepage functions 
+
 
 function headerBuffer() {
     const headerHeight = document.querySelector('.header-height');
@@ -161,18 +176,20 @@ function notHomepageFunctions() {
         return;
     } else {
         header.classList.add('scrolled');
-       headerBuffer();
+        headerBuffer();
     };
     window.addEventListener('resize', headerBuffer)
 }
 
 
 
-//Functions to run on page load
-checkIfHomepage();
-homepageFunctions();
-notHomepageFunctions();
 
 
 // Set the year at the bottom of the page
 document.querySelector('.year').innerHTML = new Date().getFullYear();
+
+
+//Functions to run on page load
+checkIfHomepage();
+homepageFunctions();
+notHomepageFunctions();
