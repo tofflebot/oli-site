@@ -30,7 +30,7 @@
                     <li><a href="#"><i class="fas fa-chevron-circle-right"></i>Photo & Video</a></li>
                     <li><a href="#"><i class="fas fa-chevron-circle-right"></i>Underwater</a></li>
                 </ul>
-                <li><a href="#"><i class="fas fa-pencil-alt"></i>Blog</a></li>
+                <li><a href="blog-list.html"><i class="fas fa-pencil-alt"></i>Blog</a></li>
                 <li><a href="#"><i class="fas fa-id-card-alt"></i>About</a></li>
                 <li><a href="#"><i class="fas fa-envelope"></i>Contact</a></li>
             </ul>
@@ -42,23 +42,30 @@
     <header class="page-header">
         <div class="container">
             <button class="nav-open-button transparent-button">Menu <i class="fas fa-plus"></i></button>
-            <img class="header-logo" src="images/TEF logo black no text.png" alt="Triple Element Films logo">
+            <a href="index.html"><img class="header-logo" src="images/TEF logo black no text.png"
+                    alt="Triple Element Films logo"></a>
         </div>
     </header>
     <div class="header-height"></div>
 
     <main>
-        <div class="blog-list-colour-banner">
+        <!-- <div class="page-title-div">
+            <div class="section-background">
+                <img class="background-image" src="images/street.jpg" alt="A street scene at night">
+            </div>
+            <div class="services-gradient"></div> -->
+        <h1 class="page-title">Blog</h1>
+        <!-- </div> -->
+        <div class="featured-blog">
             <div class="container">
-                <h1 class="text-center">Blogs</h1>
-                <h2 class="latest-blog">Latest blog:</h2>
+                <h3 class="latest-blog-header">Latest post</h3>
                 <div class="blog-card">
                     <figure>
-                        <img class="blog-list-image responive-image white-border shadow" src="images/eel.jpg"
-                            alt="An eel">
+                        <img class="blog-list-image responive-image white-border shadow" src="images/octopus.jpg"
+                            alt="An Octopus">
                     </figure>
                     <div class="blog-list-text">
-                        <span class="date">30 April 2020</span>
+                        <p class="date">30 April 2020</p>
                         <h2>Swimming in camouflage</h2>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam assumenda ratione in
                             quasi
@@ -68,6 +75,7 @@
                         <a href="blog.html">Read more →</a>
                     </div>
                 </div>
+
             </div>
         </div>
         <div class="container">
@@ -78,7 +86,7 @@
                         alt="An eel">
                 </figure>
                 <div class="blog-list-text">
-                    <span class="date">15 March 2020</span>
+                    <p class="date">15 March 2020</p>
                     <h2>Having a lovely time</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam assumenda ratione in quasi
                         doloribus odit culpa, mollitia dolorum sapiente officia, explicabo sunt earum quo cupiditate
@@ -92,7 +100,7 @@
                         alt="An eel">
                 </figure>
                 <div class="blog-list-text">
-                    <span class="date">9 February 2020</span>
+                    <p class="date">9 February 2020</p>
                     <h2>Are you having a laugh</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam assumenda ratione in quasi
                         doloribus odit culpa, mollitia dolorum sapiente officia, explicabo sunt earum quo cupiditate
@@ -106,7 +114,7 @@
                         alt="An eel">
                 </figure>
                 <div class="blog-list-text">
-                    <span class="date">19 December 2019</span>
+                    <p class="date">19 December 2019</p>
                     <h2>Pizza is great</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam assumenda ratione in quasi
                         doloribus odit culpa, mollitia dolorum sapiente officia, explicabo sunt earum quo cupiditate
@@ -120,7 +128,7 @@
                         alt="An eel">
                 </figure>
                 <div class="blog-list-text">
-                    <span class="date">14 November 2019</span>
+                    <p class="date">14 November 2019</p>
                     <h2>Lovely life</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam assumenda ratione in quasi
                         doloribus odit culpa, mollitia dolorum sapiente officia, explicabo sunt earum quo cupiditate
@@ -134,7 +142,7 @@
                         alt="An eel">
                 </figure>
                 <div class="blog-list-text">
-                    <span class="date">14 October 2019</span>
+                    <p class="date">14 October 2019</p>
                     <h2>I like beans</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam assumenda ratione in quasi
                         doloribus odit culpa, mollitia dolorum sapiente officia, explicabo sunt earum quo cupiditate
@@ -150,25 +158,26 @@
 
     <footer>
         <div class="container">
-            <div class="flex-row">
-                <div class="flex-small footer-left">
+            <div class="footer-grid">
+                <div class="footer-left">
                     <ul>
                         <li>Contact us</li>
                         <li>About</li>
                     </ul>
                 </div>
-                <div class="flex-small social-icons footer-right">
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-
+                <div class="social-icons footer-right">
+                    <div>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                    </div>
                 </div>
-            </div>
-            <div class="flex-row">
-                <div class="flex-small footer-left">
+
+
+                <div class="footer-left">
                     <p>&copy; Triple Element Films <span class="year"></span></p>
                 </div>
-                <div class="flex-small footer-right">
+                <div class="footer-right">
                     <p>Website by Tom</p>
                 </div>
             </div>
