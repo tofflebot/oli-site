@@ -193,3 +193,6 @@ document.querySelector('.year').innerHTML = new Date().getFullYear();
 checkIfHomepage();
 homepageFunctions();
 notHomepageFunctions();
+
+window.addEventListener('load', () => console.log('loaded'));
+window.addEventListener('DOMContentLoaded', () => console.log('DOMContentLoaded'));
