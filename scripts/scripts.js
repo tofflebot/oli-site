@@ -7,6 +7,17 @@ function checkIfHomepage() {
     }
 }
 
+//Plyr on other pages 
+function servicePlyrs() {
+if (!document.querySelector('.service-page-banner')) {
+    return;
+} else {
+    const player = new Plyr('#player', {});
+    // Expose player so it can be used from the console
+    window.player = player;
+}
+};
+
 
 // Navigation
 const nav = document.querySelector('.nav');
@@ -193,6 +204,7 @@ document.querySelector('.year').innerHTML = new Date().getFullYear();
 checkIfHomepage();
 homepageFunctions();
 notHomepageFunctions();
+servicePlyrs();
 
 window.addEventListener('load', () => console.log('loaded'));
 window.addEventListener('DOMContentLoaded', () => console.log('DOMContentLoaded'));
