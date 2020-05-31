@@ -9,7 +9,7 @@ function checkIfHomepage() {
 
 //Plyr on other pages 
 function servicePlyrs() {
-if (!document.querySelector('.service-page-banner')) {
+if (!document.querySelector('.page-banner')) {
     return;
 } else {
     const player = new Plyr('#player', {});
@@ -187,6 +187,7 @@ function notHomepageFunctions() {
         return;
     } else {
         header.classList.add('scrolled');
+        window.addEventListener('DOMContentLoaded', () => console.log('DOMContentLoaded'));
         headerBuffer();
     };
     window.addEventListener('resize', headerBuffer)
