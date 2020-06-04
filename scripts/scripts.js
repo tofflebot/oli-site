@@ -9,13 +9,13 @@ function checkIfHomepage() {
 
 //Plyr on other pages 
 function servicePlyrs() {
-if (!document.querySelector('.page-banner')) {
-    return;
-} else {
-    const player = new Plyr('#player', {});
-    // Expose player so it can be used from the console
-    window.player = player;
-}
+    if (!document.querySelector('.page-banner')) {
+        return;
+    } else {
+        const player = new Plyr('#player', {});
+        // Expose player so it can be used from the console
+        window.player = player;
+    }
 };
 
 
@@ -24,6 +24,10 @@ const nav = document.querySelector('.nav');
 const header = document.querySelector('.page-header');
 const navOpenButton = document.querySelector('.nav-open-button');
 const navCloseButton = document.querySelector('.nav-close-button');
+const servicesToggle = document.querySelector('.services-nav-link');
+const servicesNavList = document.querySelector('.services-nav-list');
+
+
 
 function openNav() {
     nav.dispatchEvent(new CustomEvent('navOpened'));
@@ -41,11 +45,23 @@ function closeNav() {
     body.classList.remove('no-scroll');
     setTimeout(() => {
         navOpenButton.style.opacity = 1
-    }, 200);                              
+    }, 200);
+}
+
+function toggleServices() {
+    const servicesNavIcon = document.querySelector('.fa-wrench');
+    servicesNavList.classList.toggle('toggled');
+    servicesNavIcon.classList.toggle('toggled');
 }
 
 navOpenButton.addEventListener('click', openNav);
 navCloseButton.addEventListener('click', closeNav);
+servicesToggle.addEventListener('click', toggleServices);
+servicesToggle.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+        toggleServices();
+    }
+} )
 
 window.addEventListener('keydown', e => {
     if (e.key === 'Escape') {
@@ -128,8 +144,8 @@ function homepageFunctions() {
                 heroVideo.play();
             });
 
-            
-            
+
+
 
 
 

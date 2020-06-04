@@ -23,8 +23,13 @@
         <nav class="nav-content">
             <ul>
                 <li><a href="index.html"><i class="fas fa-home"></i>Home</a></li>
-                <li><a href="#"><i class="fas fa-wrench"></i>Services</a></li>
-                <ul class="services-nav-list">
+                <li>
+                    <div class="services-nav-link" tabindex="0">
+                        <i class="fas fa-wrench"></i>Services
+                    </div>
+                </li>
+                <ul class="services-nav-list" tabindex="-1">
+                    <!-- TODO: tab index of submenu links -->
                     <li><a href="filmmaking.html"><i class="fas fa-chevron-circle-right"></i>Filmmaking</a></li>
                     <li><a href="photo-video.html"><i class="fas fa-chevron-circle-right"></i>Photo & Video</a></li>
                     <li><a href="underwater.html"><i class="fas fa-chevron-circle-right"></i>Underwater</a></li>
@@ -33,7 +38,7 @@
                 </ul>
                 <li><a href="blog-list.html"><i class="fas fa-pencil-alt"></i>Blog</a></li>
                 <li><a href="about.html"><i class="fas fa-id-card-alt"></i>About</a></li>
-                <li><a href="#"><i class="fas fa-envelope"></i>Contact</a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope"></i>Contact</a></li>
             </ul>
         </nav>
     </div>
@@ -70,8 +75,9 @@
         </div>
         <div class="container margin-bottom">
             <div class="grid large-col-auto-fill">
-                <p class="medium text-justify">Is that footage still on your shelf staring at you? Sometimes it’s hard
-                    to finish (or even start) your film project. We know how you feel, don't worry.
+                <p class="medium text-justify">Is that footage still on your shelf staring at you? Sometimes it’s
+                    hard
+                    to finish (or even start) your film project. We know how you feel, and are here to help.
 
                 </p>
             </div>
@@ -81,20 +87,22 @@
             <div class="container">
                 <div class="grid medium-col">
                     <div>
-                        <div class="white-border">
+                        <figure class="rounded-corners">
                             <div class="plyr__video-embed" id="player">
                                 <iframe
-                                    src="https://www.youtube.com/embed/Ro0Q4xqr50s?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"
+                                    src="https://www.youtube.com/embed/wAQlwOWj14U?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"
                                     allowfullscreen allowtransparency allow="autoplay"></iframe>
                             </div>
-                        </div>
+                        </figure>
+                        <figcaption class="text-center">(Edited for duckrabbit/ERA Foundation)</figcaption>
                     </div>
                     <div>
                         <p class="medium text-justify">
                             Tight deadline? No problem. Professional editing services in a range of software to help
                             polish and finish (or start!) your project.
 
-                            We can also offer tuition in editing for individuals and groups alike.
+                            We can also offer film tuition in editing for individuals and groups alike, empowering you
+                            for your next project.
                         </p>
 
                     </div>
@@ -105,7 +113,8 @@
 
         <div class="small-container contact-panel">
             <h2 class="large text-center">Get in touch</h2>
-            <p class="medium">Big or small, simple or complicated, we'd love to talk to you about your video project.
+            <p class="medium">Big or small, simple or complicated, we'd love to talk to you about your video
+                project.
             </p>
             <div class="grid small-col">
                 <div>

@@ -23,8 +23,13 @@
         <nav class="nav-content">
             <ul>
                 <li><a href="index.html"><i class="fas fa-home"></i>Home</a></li>
-                <li><a href="#"><i class="fas fa-wrench"></i>Services</a></li>
-                <ul class="services-nav-list">
+                <li>
+                    <div class="services-nav-link" tabindex="0">
+                        <i class="fas fa-wrench"></i>Services
+                    </div>
+                </li>
+                <ul class="services-nav-list" tabindex="-1">
+                    <!-- TODO: tab index of submenu links -->
                     <li><a href="filmmaking.html"><i class="fas fa-chevron-circle-right"></i>Filmmaking</a></li>
                     <li><a href="photo-video.html"><i class="fas fa-chevron-circle-right"></i>Photo & Video</a></li>
                     <li><a href="underwater.html"><i class="fas fa-chevron-circle-right"></i>Underwater</a></li>
@@ -33,11 +38,10 @@
                 </ul>
                 <li><a href="blog-list.html"><i class="fas fa-pencil-alt"></i>Blog</a></li>
                 <li><a href="about.html"><i class="fas fa-id-card-alt"></i>About</a></li>
-                <li><a href="#"><i class="fas fa-envelope"></i>Contact</a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope"></i>Contact</a></li>
             </ul>
         </nav>
     </div>
-
 
 
     <header class="page-header">
