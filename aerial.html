@@ -56,7 +56,14 @@
     <main class="aerial-page">
         <div class="page-banner">
             <div class="section-background">
-                <img class="background-image" src="images/drone-in-flight.jpg" alt="A street scene at night">
+                <picture>
+                    <source
+                        srcset="images/drone-in-flight-500.webp 500w, images/drone-in-flight-1000.webp 1000w, images/drone-in-flight-1500.webp 1500w, images/drone-in-flight.webp 2000w"
+                        type="image/webp" />
+                    <source srcset=" images/drone-in-flight-500.jpg 500w, images/drone-in-flight-1000.jpg 1000w, images/drone-in-flight-1500.jpg 1500w,
+            images/drone-in-flight.jpg 2000w" type="image/jpeg" />
+                    <img class="background-image" src="images/drone-in-flight.jpg" alt="A street scene at night">
+                </picture>
             </div>
             <div class="light-gradient"></div>
             <div class="container">

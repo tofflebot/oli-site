@@ -83,6 +83,11 @@ function homepageFunctions() {
         const modalCloseButton = document.querySelector('.close-modal-button');
         let showreelOpened = false;
 
+        const loadingScreen = document.querySelector('.loading-screen');
+
+        window.addEventListener('load', () => loadingScreen.classList.add('loaded'));
+        // window.addEventListener('DOMContentLoaded', () => console.log('DOMContentLoaded'));
+
 
         function openModal() {
             modal.classList.add('modal-open');
@@ -223,5 +228,3 @@ homepageFunctions();
 notHomepageFunctions();
 servicePlyrs();
 
-window.addEventListener('load', () => console.log('loaded'));
-window.addEventListener('DOMContentLoaded', () => console.log('DOMContentLoaded'));
