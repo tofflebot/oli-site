@@ -49,7 +49,7 @@ function closeNav() {
 }
 
 function toggleServices() {
-    const servicesNavIcon = document.querySelector('.fa-wrench');
+    const servicesNavIcon = document.querySelector('.icon-wrench');
     servicesNavList.classList.toggle('toggled');
     servicesNavIcon.classList.toggle('toggled');
 }
