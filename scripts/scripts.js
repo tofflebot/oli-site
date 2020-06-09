@@ -9,12 +9,12 @@ function checkIfHomepage() {
 
 //Plyr on other pages 
 function servicePlyrs() {
-    if (!document.querySelector('.page-banner')) {
+    if (!document.querySelector('.js-player')) {
         return;
     } else {
         const player = new Plyr('#player', {});
         // Expose player so it can be used from the console
-        window.player = player;
+        const players = Plyr.setup('.js-player');
     }
 };
 
@@ -24,9 +24,11 @@ const nav = document.querySelector('.nav');
 const header = document.querySelector('.page-header');
 const navOpenButton = document.querySelector('.nav-open-button');
 const navCloseButton = document.querySelector('.nav-close-button');
-const servicesToggle = document.querySelector('.services-nav-link');
-const servicesNavList = document.querySelector('.services-nav-list');
 
+const navLinks = document.querySelectorAll('.nav a, .nav button');
+navLinks.forEach(link => {
+    link.setAttribute("tabIndex", -1);
+});
 
 
 function openNav() {
@@ -36,7 +38,10 @@ function openNav() {
     setTimeout(() => {
         navOpenButton.style.opacity = 0;
     }, 200);
-    nav.focus();
+    navLinks.forEach(link => {
+        link.setAttribute("tabIndex", 0);
+    });
+    navCloseButton.focus();
 }
 
 function closeNav() {
@@ -46,22 +51,14 @@ function closeNav() {
     setTimeout(() => {
         navOpenButton.style.opacity = 1
     }, 200);
-}
-
-function toggleServices() {
-    const servicesNavIcon = document.querySelector('.icon-wrench');
-    servicesNavList.classList.toggle('toggled');
-    servicesNavIcon.classList.toggle('toggled');
+    navLinks.forEach(link => {
+        link.setAttribute("tabIndex", -1);
+    });
+    navOpenButton.focus();                                      
 }
 
 navOpenButton.addEventListener('click', openNav);
 navCloseButton.addEventListener('click', closeNav);
-servicesToggle.addEventListener('click', toggleServices);
-servicesToggle.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') {
-        toggleServices();
-    }
-} )
 
 window.addEventListener('keydown', e => {
     if (e.key === 'Escape') {
@@ -75,6 +72,10 @@ function homepageFunctions() {
     if (!isHomepage) {
         return
     } else {
+        const loadingScreen = document.querySelector('.loading-screen');
+        window.addEventListener('load', () => loadingScreen.classList.add('loaded'));
+
+        
         const heroSection = document.querySelector('.hero');
         const homeSectionText = document.querySelectorAll('.home-section-text');
         const heroVideo = document.querySelector('.hero video');
@@ -83,16 +84,22 @@ function homepageFunctions() {
         const modalCloseButton = document.querySelector('.close-modal-button');
         let showreelOpened = false;
 
-        const loadingScreen = document.querySelector('.loading-screen');
 
-        window.addEventListener('load', () => loadingScreen.classList.add('loaded'));
-        // window.addEventListener('DOMContentLoaded', () => console.log('DOMContentLoaded'));
+        function removeTabIndexModal() {
+        const modalElements = Array.from(modal.querySelectorAll('button, iframe, input'));
+        modalElements.forEach(element => {element.setAttribute("tabindex", -1)});
+        }   
+        removeTabIndexModal();
 
-
+        function addTabIndexModal() {
+            const modalElements = Array.from(modal.querySelectorAll('button, iframe, input'));
+            modalElements.forEach(element => {element.setAttribute("tabindex", 0)});
+        }
         function openModal() {
             modal.classList.add('modal-open');
             body.classList.add('no-scroll');
             heroVideo.pause();
+            addTabIndexModal();
             if (!showreelOpened) {
                 // https://github.com/sampotts/plyr/#options
                 const player = new Plyr('#player', {
@@ -120,6 +127,8 @@ function homepageFunctions() {
             body.classList.remove('no-scroll');
             heroVideo.play();
             stopShowreel();
+            removeTabIndexModal();
+
         }
 
         showreelButton.addEventListener('click', openModal);
@@ -189,7 +198,7 @@ function homepageFunctions() {
         });
 
         homeSectionText.forEach((text) => homeTextObserver.observe(text));
-        const modalElements = Array.from(modal.querySelectorAll('a, button'));
+        
     };
 
 }; //end homepage functions 
@@ -211,7 +220,7 @@ function notHomepageFunctions() {
         window.addEventListener('DOMContentLoaded', () => console.log('DOMContentLoaded'));
         headerBuffer();
     };
-    window.addEventListener('resize', headerBuffer)
+    window.addEventListener('resize', headerBuffer);
 }
 
 
@@ -227,4 +236,3 @@ checkIfHomepage();
 homepageFunctions();
 notHomepageFunctions();
 servicePlyrs();
-

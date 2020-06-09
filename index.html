@@ -3,13 +3,12 @@
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- TODO remove noindex-->
   <meta name="robots" content="noindex">
   <title>Triple Element Films</title>
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/tes-icons.css">
 </head>
-<body>
+<body><a id="top"></a>
   <div class="nav">
     <div class="container">
       <button class="nav-close-button transparent-button">Close <i class="icon-cancel"></i></button>
@@ -17,10 +16,8 @@
     <nav class="nav-content">
       <ul>
         <li><a href="index.html"><i class="icon-home"></i>Home</a></li>
-        <li>
-          <div class="services-nav-link" tabindex="0"><i class="icon-wrench"></i>Services</div>
-        </li>
-        <ul class="services-nav-list" tabindex="-1">
+        <li class="services-nav-link"><i class="icon-wrench"></i>Services</li>
+        <ul class="services-nav-list">
           <!-- TODO: tab index of submenu links-->
           <li><a href="filmmaking.html"><i class="icon-chevron-right"></i>Filmmaking</a></li>
           <li><a href="photo-video.html"><i class="icon-chevron-right"></i>Photo &amp; Video</a></li>
@@ -40,23 +37,23 @@
     </div>
   </header>
   <div class="loading-screen"><img class="loading-logo" src="images/TEF logo black no text.png" alt="Triple element films logo"></div>
-  <div class="modal-outer">
-    <div class="modal-inner rounded-corners">
-      <button class="close-modal-button"><i class="icon-cancel"></i></button>
-      <div class="plyr__video-embed" id="player">
-        <iframe src="https://player.vimeo.com/video/424520808?loop=false&amp;byline=false&amp;portrait=false&amp;title=false&amp;speed=true&amp;transparent=0&amp;gesture=media" allowfullscreen="" allowtransparency="" allow="autoplay"></iframe>
-      </div>
-    </div>
-  </div>
   <main class="homepage-main">
     <section class="section hero vertical-center">
       <div class="section-background">
-        <video class="background-image hero-video" poster="images/turtle-video-poster.jpg" src="images/homepage.mp4" autoplay="" loop=""></video>
+        <video class="background-image hero-video" tabindex="-1" poster="images/turtle-video-poster.jpg" src="images/homepage.mp4" autoplay="" loop=""></video>
       </div><img class="hero-logo responsive-image" src="images/TEF logo white.png" alt="Triple Element Films logo">
       <h2 class="byline">Land | Water | Air</h2>
       <button class="showreel-play-button transparent-button"><i class="icon-play"></i> Play showreel</button>
     </section>
-    <section class="section service about-home-section">
+    <div class="modal-outer">
+      <div class="modal-inner rounded-corners">
+        <button class="close-modal-button"><i class="icon-cancel"></i></button>
+        <div class="plyr__video-embed" id="player">
+          <iframe src="https://player.vimeo.com/video/424520808?loop=false&amp;byline=false&amp;portrait=false&amp;title=false&amp;speed=true&amp;transparent=0&amp;gesture=media" allowfullscreen="" allowtransparency="" allow="autoplay"></iframe>
+        </div>
+      </div>
+    </div>
+    <section class="section service black-squares-background about-home-section">
       <div class="container section-container flex-right">
         <div class="home-section-text">
           <p class="large">
@@ -139,7 +136,7 @@
       <div class="section-background">
         <picture>
           <source srcset="images/edit-500.webp 500w, images/edit-1000.webp 1000w, images/edit-1500.webp 1500w, images/edit.webp 2000w" type="image/webp">
-          <source srcset=" images/edit-500.png 500w, images/edit-1000.png 1000w, images/edit-1500.png 1500w, images/edit.png 2000w" type="image/png"><img class="background-image" src="images/edit.png" alt="A video editing screen">
+          <source srcset="images/edit-500.png 500w, images/edit-1000.png 1000w, images/edit-1500.png 1500w, images/edit.png 2000w" type="image/png"><img class="background-image" src="images/edit.png" alt="A video editing screen">
         </picture>
       </div>
       <div class="light-gradient"></div>
@@ -150,11 +147,14 @@
         </div>
       </div>
     </section>
+    <section class="section service black-squares-background clients">
+      <div class="container section-container"><img class="margin-top margin-bottom responsive-image" src="images/clients.png" alt=""></div>
+    </section>
     <section class="section get-in-touch vertical-center">
       <div class="section-background">
         <picture>
-          <source srcset="images/sunset-500.webp 500w, images/sunset-1000.webp 1000w, images/sunset-1500.webp 1500w, /sunset.webp 2000w" type="image/webp">
-          <source srcset=" images/sunset-500.jpg 500w, images/sunset-1000.jpg 1000w, images/sunset-1500.jpg 1500w, images/sunset.jpg 2000w" type="image/jpeg"><img class="background-image" src="images/sunset.jpg" alt="A sunset view">
+          <source srcset="images/sunset-500.webp 500w, images/sunset-1000.webp 1000w, images/sunset-1500.webp 1500w, images/sunset.webp 2000w" type="image/webp">
+          <source srcset="images/sunset-500.jpg 500w, images/sunset-1000.jpg 1000w, images/sunset-1500.jpg 1500w, images/sunset.jpg 2000w" type="image/jpeg"><img class="background-image" src="images/sunset.jpg" alt="A sunset view">
         </picture>
       </div>
       <div class="small-container contact-panel rounded-corners">
@@ -188,12 +188,12 @@
     <div class="footer-grid">
       <div class="footer-left">
         <ul>
-          <li>Contact us</li>
-          <li>About</li>
+          <li><a href="#top">Back to top  ↑</a></li>
+          <li> <a href="contact.html">Contact us</a></li>
         </ul>
       </div>
       <div class="social-icons footer-right">
-        <div><a href="https://www.instagram.com/triple_element_films" target="_blank"><i class="icon-instagram"></i></a><a href="https://twitter.com/O_Sharpe" target="_blank"><i class="icon-twitter"></i></a><a href="http://vimeo.com/tripleelementfilms" target="_blank"><i class="icon-vimeo"></i></a><a href="https://www.facebook.com/TripleElementFilms" target="_blank"><i class="icon-facebook"></i></a></div>
+        <div><a href="https://www.instagram.com/triple_element_films" target="_blank"><i class="icon-instagram"></i></a><a href="https://www.linkedin.com/in/oliver-sharpe/" target="_blank"><i class="icon-linkedin"></i></a><a href="https://twitter.com/O_Sharpe" target="_blank"><i class="icon-twitter"></i></a><a href="http://vimeo.com/tripleelementfilms" target="_blank"><i class="icon-vimeo"></i></a><a href="https://www.facebook.com/TripleElementFilms" target="_blank"><i class="icon-facebook"></i></a></div>
       </div>
       <div class="footer-left">
         <p>&copy; Triple Element Films <span class="year"></span></p>
