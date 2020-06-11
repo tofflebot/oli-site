@@ -77,7 +77,7 @@ function homepageFunctions() {
 
         
         const heroSection = document.querySelector('.hero');
-        const homeSectionText = document.querySelectorAll('.home-section-text');
+        const fadeInOnScroll = document.querySelectorAll('.fade-in-on-scroll');
         const heroVideo = document.querySelector('.hero video');
         const showreelButton = document.querySelector('.showreel-play-button');
         const modal = document.querySelector('.modal-outer');
@@ -185,19 +185,19 @@ function homepageFunctions() {
         filmmakingSectionObserver.observe(heroSection);
 
         // Animate home page elements on scroll 
-        function homeTextCallback(homeText) {
-            homeText.forEach((homeTextObserverEntry) => {
-                if (homeTextObserverEntry.isIntersecting) {
-                    homeTextObserverEntry.target.classList.add('scrolled');
+        function fadeInOnScrollCallback(fadeInItem) {
+            fadeInItem.forEach((fadeInItemObserverEntry) => {
+                if (fadeInItemObserverEntry.isIntersecting) {
+                    fadeInItemObserverEntry.target.classList.add('scrolled');
                 }
             })
         }
 
-        const homeTextObserver = new IntersectionObserver(homeTextCallback, {
+        const fadeInObserver = new IntersectionObserver(fadeInOnScrollCallback, {
             threshold: 0.3,
         });
 
-        homeSectionText.forEach((text) => homeTextObserver.observe(text));
+        fadeInOnScroll.forEach((item) => fadeInObserver.observe(item));
         
     };
 
