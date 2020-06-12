@@ -209,8 +209,6 @@ function headerBuffer() {
     headerHeight.style.height = `${header.clientHeight}px`;
 }
 
-// TODO prevent focus on nav and modal when closed and on body when they are open 
-
 //Not homepage functions
 function notHomepageFunctions() {
     if (isHomepage) {
